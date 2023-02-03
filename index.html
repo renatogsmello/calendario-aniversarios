@@ -12,11 +12,22 @@
 		<form class="form js-form">
 			<label for="name">
 				Nome
-				<input class="form-field js-field" id="name" maxlength="120" name="name" required type="text" />
+				<input
+					class="form-field js-field"
+					minlength="3"
+					maxlength="120"
+					pattern="([aA-zZ])+"
+					title="Use somente letras"
+					id="name"
+					maxlength="120"
+					name="name"
+					required
+					type="text"
+				/>
 			</label>
 			<label for="birth-date">
 				Data de Nascimento
-				<input class="form-field js-field" id="birth-date" name="birth-date" required type="date" />
+				<input class="form-field js-field" id="birth-date" name="birth-date" required type="date" pattern="\d{4}-\d{2}-\d{2} " />
 			</label>
 			<button type="submit">Salvar</button>
 		</form>
