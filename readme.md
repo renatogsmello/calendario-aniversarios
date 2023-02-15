@@ -13,3 +13,7 @@ Fazer a validação dos campos usando apenas HTML
 ### Dia 3
 
 Salvar as informações no localstorage e exibi-las em uma tabela
+
+### Dia 4
+
+Edição das infomarções salvas

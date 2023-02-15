@@ -15,6 +15,7 @@ form.addEventListener("submit", (e) => {
 	let birthDate = document.getElementById("birth-date").value
 
 	let formData = {
+		id: Math.floor(Math.random() * 200),
 		name: name,
 		birthDate: birthDate,
 	}
@@ -34,12 +35,31 @@ function listarPessoas(pessoas) {
 	}
 	pessoas.map((p) => {
 		let tr = document.createElement("tr")
+		tr.id = p.id
 		let tdName = document.createElement("td")
 		let tdDate = document.createElement("td")
-		tdName.innerText = p.name
+		let tdButton = document.createElement("td")
+		tdName.innerHTML = p.name
 		tdDate.innerText = p.birthDate
+		tdButton.innerHTML = `<button type="button" onclick="edit(${p.id})">Editar</button>`
 		tr.appendChild(tdName)
 		tr.appendChild(tdDate)
+		tr.appendChild(tdButton)
 		tBody.appendChild(tr)
 	})
+}
+
+function edit(id) {
+	let tr = document.getElementById(id)
+	let name = document.getElementById("name")
+	let birthDate = document.getElementById("birth-date")
+	const pessoasStorage = JSON.parse(localStorage.getItem("pessoas"))
+
+	pessoasStorage.map((p) => {
+		if (p.id == id) {
+			name.value = p.name
+			birthDate.value = p.birthDate
+		}
+	})
+	console.log(tr)
 }
