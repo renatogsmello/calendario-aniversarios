@@ -9,3 +9,7 @@ Preparo da página HTML com estilos CSS e script inicial com o objetivo de capta
 ## Dia 2
 
 Fazer a validação dos campos usando apenas HTML
+
+### Dia 3
+
+Salvar as informações no localstorage e exibi-las em uma tabela
