@@ -17,3 +17,7 @@ Salvar as informações no localstorage e exibi-las em uma tabela
 ### Dia 4
 
 Edição das infomarções salvas
+
+### Dia 5
+
+Exclusão dos aniversariantes
