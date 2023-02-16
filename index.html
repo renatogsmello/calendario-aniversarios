@@ -5,16 +5,16 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Calendário de Aniversários</title>
-		<!-- <link rel="stylesheet" href="style.css" /> -->
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 	</head>
-	<body>
-		<h1>Cadastro de pessoas</h1>
-		<form class="form js-form">
-			<label for="name">
+	<body class="bg-cyan-200">
+		<h1 class="text-center bg-cyan-600 border-b-4 border-cyan-700 p-4 text-2xl text-cyan-100">Cadastro de Aniversários</h1>
+		<form class="mt-10 flex justify-center mb-20">
+			<label for="name" class="text-cyan-900">
 				Nome
 				<input
-					class="form-field js-field"
-					minlength="3"
+					class="form-input rounded border-none bg-cyan-100 ml-2"
 					maxlength="120"
 					pattern="([aA-zZ])+"
 					title="Use somente letras"
@@ -25,17 +25,24 @@
 					type="text"
 				/>
 			</label>
-			<label for="birth-date">
+			<label for="birth-date" class="mx-6 text-cyan-900">
 				Data de Nascimento
-				<input class="form-field js-field" id="birth-date" name="birth-date" required type="date" pattern="\d{4}-\d{2}-\d{2} " />
+				<input
+					class="form-input rounded border-none bg-cyan-100 ml-2"
+					id="birth-date"
+					name="birth-date"
+					required
+					type="date"
+					pattern="\d{4}-\d{2}-\d{2} "
+				/>
 			</label>
-			<button type="submit">Salvar</button>
+			<button type="submit" class="bg-cyan-700 text-cyan-50 px-6 rounded">Salvar</button>
 		</form>
-		<table id="listaPessoas">
-			<thead>
+		<table class="mx-auto" id="listaPessoas">
+			<thead class="border-b-2 border-cyan-600">
 				<tr>
-					<th>Nome</th>
-					<th>Aniversário</th>
+					<th class="text-cyan-900">Nome</th>
+					<th class="text-cyan-900">Aniversário</th>
 				</tr>
 			</thead>
 		</table>

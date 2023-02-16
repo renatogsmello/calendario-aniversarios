@@ -17,22 +17,8 @@ form.addEventListener("submit", (e) => {
 		birthDate: birthDate,
 	}
 
-	// if (localStorage.length == 0) {
-	// 	pessoas.push(formData)
-	// 	localStorage.setItem(formData.id, JSON.stringify({ name, birthDate }))
-	// }
-	// for (let i = 0; i < localStorage.length; i++) {
-	// 	const pessoaKey = localStorage.key(i)
-	// 	console.log(`formData id: ${formData.id} pessoaKey: ${pessoaKey}`)
-
-	// 	if (pessoaKey == formData.id) {
-	// 		localStorage.setItem(pessoaKey, JSON.stringify({ name, birthDate }))
-	// 	}
-	// }
-
 	pessoas.push(formData)
 	localStorage.setItem(formData.id, JSON.stringify({ name, birthDate }))
-	// const pessoasStorage = JSON.parse(localStorage.getItem("pessoas")) || []
 
 	listarPessoas()
 	form.reset()
@@ -53,11 +39,11 @@ function listarPessoas() {
 		let tdEditButton = document.createElement("td")
 		let tdRemoveButton = document.createElement("td")
 		let tdUpdateButton = document.createElement("td")
-		tdName.innerHTML = `<input id="${pessoaKey}${pessoaStorage.name}" type="text" value="${pessoaStorage.name}" readonly/>`
-		tdDate.innerHTML = `<input id="${pessoaKey}${pessoaStorage.birthDate}" type="date" value="${pessoaStorage.birthDate}" readonly/>`
-		tdEditButton.innerHTML = `<button id="${pessoaKey}Editar" type="button" onclick="edit(${pessoaKey})">Editar</button>`
-		tdRemoveButton.innerHTML = `<button  type="button" onclick="remove(${pessoaKey})">Deletar</button>`
-		tdUpdateButton.innerHTML = `<button id="${pessoaKey}Atualizar" type="button" onclick="update(${pessoaKey})" disabled="true">Atualizar</button>`
+		tdName.innerHTML = `<input class="border-none bg-cyan-200 text-cyan-800 text-lg" id="${pessoaKey}${pessoaStorage.name}" type="text" value="${pessoaStorage.name}" readonly/>`
+		tdDate.innerHTML = `<input class="border-none bg-cyan-200 text-cyan-800 text-lg" id="${pessoaKey}${pessoaStorage.birthDate}" type="date" value="${pessoaStorage.birthDate}" readonly/>`
+		tdEditButton.innerHTML = `<button class="bg-cyan-700 px-4 py-1 rounded text-cyan-100" id="${pessoaKey}Editar" type="button" onclick="edit(${pessoaKey})">Editar</button>`
+		tdRemoveButton.innerHTML = `<button class="bg-red-700 px-4 py-1 rounded text-red-100 mx-4" type="button" onclick="remove(${pessoaKey})">Deletar</button>`
+		tdUpdateButton.innerHTML = `<button class="bg-gray-200 px-4 py-1 rounded" id="${pessoaKey}Atualizar" type="button" onclick="update(${pessoaKey})" disabled="true">Atualizar</button>`
 		tr.appendChild(tdName)
 		tr.appendChild(tdDate)
 		tr.appendChild(tdEditButton)
