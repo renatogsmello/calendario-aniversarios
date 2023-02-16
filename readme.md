@@ -21,3 +21,7 @@ Edição das infomarções salvas
 ### Dia 5
 
 Exclusão dos aniversariantes
+
+### Dia 6
+
+Estilização
